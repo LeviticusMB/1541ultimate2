@@ -145,6 +145,11 @@ extern "C" void ultimate_main(void *a)
     vTaskList(buffer);
     puts(buffer);
 
+    if(c64 && c64->exists()) {    
+        vTaskDelay(25);
+        c64->preload_reu();
+    }
+    
     if(ui) {
     	ui->run();
     } else {

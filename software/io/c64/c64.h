@@ -161,6 +161,9 @@
 #define CFG_C64_PHI2_REC 0xCC
 #define CFG_C64_RATE	 0xCD
 #define CFG_CMD_ENABLE   0x71
+#define CFG_C64_REU_PRE  0x72
+#define CFG_C64_REU_IMG  0x73
+#define CFG_C64_REU_OFFS 0x74
 
 #define ID_MODPLAYER 0xAA
 
@@ -247,7 +250,8 @@ public:
     void init_cartridge(void);
     void cartridge_test(void);
     void reset(void);
-        
+    void preload_reu(void);
+    
     friend class FileTypeSID; // sid load does some tricks
     friend class C64_Subsys; // the wrapper with file access
 };
